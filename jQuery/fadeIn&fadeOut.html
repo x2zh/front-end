@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淡入淡出</title>
+    <style>
+        div{
+            height: 80px;
+            width: 80px;
+            float: left;
+            margin-right: 80px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        .div1{
+            background-color: red;
+        }
+        .div2{
+            background-color: green;
+        }
+        .div3{
+            background-color: blue;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#fadeIn").click(function () {
+                $("#in1").fadeIn();
+                $("#in2").fadeIn("slow");
+                $("#in3").fadeIn(3000);
+            });
+            $("#fadeOut").click(function () {
+                $("#out1").fadeOut();
+                $("#out2").fadeOut("slow");
+                $("#out3").fadeOut(3000);
+            });
+            $("#fadeToggle").click(function () {
+                $("#toggle1").fadeToggle();
+                $("#toggle2").fadeToggle("slow");
+                $("#toggle3").fadeToggle(3000);
+            });
+            $("#fadeTo").click(function () {
+                $("#to1").fadeTo("slow",0.14);
+                $("#to2").fadeTo("slow",0.4);
+                $("#to3").fadeTo("slow",0.7);
+            });
+        });
+    </script>
+</head>
+<body>
+<div>
+    <button id="fadeIn">淡入</button>
+    <div id="in1" class="div1" style="display: none"></div>
+    <div id="in2" class="div2" style="display: none"></div>
+    <div id="in3" class="div3" style="display: none"></div>
+</div>
+<div>
+    <button id="fadeOut">淡出</button>
+    <div id="out1" class="div1"></div>
+    <div id="out2" class="div2"></div>
+    <div id="out3" class="div3"></div>
+</div>
+<div>
+    <button id="fadeToggle">切换</button>
+    <div id="toggle1" class="div1"></div>
+    <div id="toggle2" class="div2"></div>
+    <div id="toggle3" class="div3"></div>
+</div>
+<div>
+    <button id="fadeTo">透明</button>
+    <div id="to1" class="div1"></div>
+    <div id="to2" class="div2"></div>
+    <div id="to3" class="div3"></div>
+</div>
+</body>
+</html>
